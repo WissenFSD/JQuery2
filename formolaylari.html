@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btnsubmit").click(function () {
+
+                $("#testform").submit();
+            });
+
+
+            /*Select elementinden bir eleman seçme işleminde, jquery de change metodu tetiklenir.
+             Change metodunun içerisinden seçilen elemanı yakalamak için this.value demek gerekmektedir.*/
+            $("#selectchange").change(function (selected) {
+
+
+                alert(this.value);
+
+            });
+
+            $("#fokus").focus(function () {
+
+                $(this).css("background-color", "red");
+
+            });
+            $("#fokus").blur(function () {
+
+                $(this).css("background-color", "white");
+
+            });
+
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <form id="testform" method="get" action="https://www.google.com/search">
+
+        <input name="q" type="text">
+        <input id="btnsubmit" type="button" value="formu gönder">
+    </form>
+
+    <select id="selectchange">
+        <option>Ankara</option>
+        <option>İstanbul</option>
+        <option>Malatya</option>
+        <option>Urfa</option>
+        <option>Kars</option>
+        <option>Adıyaman</option>
+    </select>
+    <input type="text" id="fokus">
+  
+
+</body>
+
+</html>

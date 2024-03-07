@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            /*dblClick butona çift tıklanılınca çalışacaktır.*/
+            $(".btndouble").dblclick(function () {
+
+
+                alert("Çift tıklama")
+            });
+
+            /*Mouse Move mouse hareket ettiğinde çalışacaktır*/
+            $(window).mousemove(function (event) {
+                $(".x").text(event.pageX);
+                $(".y").text(event.pageY);
+            });
+
+            /*Div'in üzerine mouse ile gelindiğinde, çalışacaktır.*/
+            $("#diventer").mouseenter(function () {
+
+                $(this).css("background-color", "red");
+
+
+
+                /*Mouse div'in üzerinden ayrıldığında çalışacaktır.*/
+            });
+            $("#diventer").mouseleave(function () {
+
+                $(this).css("background-color", "black");
+
+            });
+            /*Hover olayı, mouseleave ve mouseenter olaylarının birleşimi gibi çalışmaktadır.*/
+            $("#divhover").hover(
+                function () {
+
+                    $(this).css("background-color", "red");
+
+                }, function () {
+
+
+                    $(this).css("background-color", "black");
+
+
+                });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button class="btndouble">Double Click</button>
+
+    <span>X Koordinatları . <bold class="x"></bold></span>
+    <span>Y Koordinatları . <bold class="y"></bold></span>
+    <div id="diventer" style="width: 300px; height: 300px;border:3px solid black"></div>
+    <div id="divhover" style="width: 300px; height: 300px;border:3px solid black"></div>
+</body>
+
+</html>
